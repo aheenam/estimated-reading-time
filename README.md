@@ -29,6 +29,22 @@ $text = \Faker\Factory::create()->words(400, true);
     ->calculateTime();
 ```
 
+### Set default words per minute
+
+By default the assumption is made that one is able to read 200 words per minute, but you can easily change this config by setting the property `$wordsPerMinute`
+
+```php
+<?php
+
+// text with 400 words
+$text = \Faker\Factory::create()->words(400, true);
+
+// returns 1
+(new EstimatedReadTime)
+    ->setWordsPerMinute(400)
+    ->setText($text)
+    ->calculateTime();
+```
 
 Changelog
 ---

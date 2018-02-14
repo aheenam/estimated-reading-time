@@ -19,4 +19,22 @@ class EstimatedReadTimeTest extends TestCase
 
         $this->assertEquals(2, $minutes);
     }
+
+    /** @test */
+    public function it_can_handle_custom_words_per_minute()
+    {
+        $text = \Faker\Factory::create()->words(400, true);
+
+        $minutesDefault = (new EstimatedReadTime)
+            ->setText($text)
+            ->calculateTime();
+
+        $minutes = (new EstimatedReadTime)
+            ->setWordsPerMinute(400)
+            ->setText($text)
+            ->calculateTime();
+
+        $this->assertEquals(2, $minutesDefault);
+        $this->assertEquals(1, $minutes);
+    }
 }
