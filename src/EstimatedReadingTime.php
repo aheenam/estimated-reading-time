@@ -1,8 +1,8 @@
 <?php
 
-namespace Aheenam\EstimatedReadTime;
+namespace Aheenam\EstimatedReadingTime;
 
-class EstimatedReadTime
+class EstimatedReadingTime
 {
 
     /**
@@ -31,7 +31,7 @@ class EstimatedReadTime
 
     /**
      * @param string $text
-     * @return EstimatedReadTime
+     * @return EstimatedReadingTime
      */
     public function setText($text)
     {
@@ -49,7 +49,7 @@ class EstimatedReadTime
 
     /**
      * @param interger $wordsPerMinute
-     * @return EstimatedReadTime
+     * @return EstimatedReadingTime
      */
     public function setWordsPerMinute(int $wordsPerMinute)
     {
@@ -59,7 +59,7 @@ class EstimatedReadTime
 
     /**
      * @param boolean $exactTime
-     * @return void
+     * @return EstimatedReadingTime
      */
     public function exactTime(bool $exactTime)
     {

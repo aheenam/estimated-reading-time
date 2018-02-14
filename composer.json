@@ -1,5 +1,5 @@
 {
-  "name": "aheenam/estimated-read-time",
+  "name": "aheenam/estimated-reading-time",
   "description": "Calculate the reading time for any given webpage",
   "license": "MIT",
   "authors": [
@@ -14,12 +14,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Aheenam\\EstimatedReadTime\\": "src"
+      "Aheenam\\EstimatedReadingTime\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Aheenam\\EstimatedReadTime\\Test\\": "tests"
+      "Aheenam\\EstimatedReadingTime\\Test\\": "tests"
     }
   },
   "scripts": {

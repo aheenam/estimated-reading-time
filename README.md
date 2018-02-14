@@ -1,4 +1,4 @@
-Estimated reading time
+Estimated Reading Time
 ===
 
 Calculate the estimated reading time of any given webpage.
@@ -24,7 +24,7 @@ the given text.
 $text = \Faker\Factory::create()->words(400, true);
 
 // returns 2
-(new EstimatedReadTime)
+(new EstimatedReadingTime)
     ->setText($text)
     ->calculateTime();
 ```
@@ -42,7 +42,7 @@ By default the assumption is made that one is able to read 200 words per minute,
 $text = \Faker\Factory::create()->words(400, true);
 
 // returns 1
-(new EstimatedReadTime)
+(new EstimatedReadingTime)
     ->setWordsPerMinute(400)
     ->setText($text)
     ->calculateTime();
@@ -58,13 +58,13 @@ Another default configuration is that this package returns a rounded number of m
 $text = \Faker\Factory::create()->words(650, true);
 
 // returns 3.25
-(new EstimatedReadTime)
+(new EstimatedReadingTime)
     ->exactTime(true)
     ->setText($text)
     ->calculateTime();
 
 // returns 3
-(new EstimatedReadTime)
+(new EstimatedReadingTime)
     ->setText($text)
     ->calculateTime();
 ```

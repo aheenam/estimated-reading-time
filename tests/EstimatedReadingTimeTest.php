@@ -1,11 +1,11 @@
 <?php
 
-namespace Aheenam\EstimatedReadTime\Test;
+namespace Aheenam\EstimatedReadingTime\Test;
 
 use PHPUnit\Framework\TestCase;
-use Aheenam\EstimatedReadTime\EstimatedReadTime;
+use Aheenam\EstimatedReadingTime\EstimatedReadingTime;
 
-class EstimatedReadTimeTest extends TestCase
+class EstimatedReadingTimeTest extends TestCase
 {
 
     /** @test */
@@ -13,7 +13,7 @@ class EstimatedReadTimeTest extends TestCase
     {
         $text = \Faker\Factory::create()->words(400, true);
 
-        $minutes = (new EstimatedReadTime)
+        $minutes = (new EstimatedReadingTime)
             ->setText($text)
             ->calculateTime();
 
@@ -25,7 +25,7 @@ class EstimatedReadTimeTest extends TestCase
     {
         $html = "<h1>That is an sample title</h1>";
 
-        $instance = (new EstimatedReadTime)
+        $instance = (new EstimatedReadingTime)
             ->setText($html);
 
         $this->assertEquals("That is an sample title", $instance->getText());
@@ -36,11 +36,11 @@ class EstimatedReadTimeTest extends TestCase
     {
         $text = \Faker\Factory::create()->words(400, true);
 
-        $minutesDefault = (new EstimatedReadTime)
+        $minutesDefault = (new EstimatedReadingTime)
             ->setText($text)
             ->calculateTime();
 
-        $minutes = (new EstimatedReadTime)
+        $minutes = (new EstimatedReadingTime)
             ->setWordsPerMinute(400)
             ->setText($text)
             ->calculateTime();
@@ -54,12 +54,12 @@ class EstimatedReadTimeTest extends TestCase
     {
         $text = \Faker\Factory::create()->words(650, true);
         
-        $exactTime = (new EstimatedReadTime)
+        $exactTime = (new EstimatedReadingTime)
             ->exactTime(true)
             ->setText($text)
             ->calculateTime();
         
-        $roundedTime = (new EstimatedReadTime)
+        $roundedTime = (new EstimatedReadingTime)
             ->setText($text)
             ->calculateTime();
 
