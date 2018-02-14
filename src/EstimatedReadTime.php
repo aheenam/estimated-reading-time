@@ -30,6 +30,6 @@ class EstimatedReadTime
     public function calculateTime()
     {
         $words = str_word_count($this->text);
-        return floor($words / 200);
+        return round($words / 200);
     }
 }
