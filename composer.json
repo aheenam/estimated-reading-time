@@ -1,0 +1,27 @@
+{
+  "name": "aheenam/estimated-read-time",
+  "description": "Calculate the reading time for any given webpage",
+  "license": "MIT",
+  "authors": [
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php" : "^7.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.3|^7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Aheenam\\EstimatedReadTime\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Aheenam\\EstimatedReadTime\\Test\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit"
+  }
+}
