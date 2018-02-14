@@ -35,8 +35,16 @@ class EstimatedReadTime
      */
     public function setText($text)
     {
-        $this->text = $text;
+        $this->text = strip_tags($text);
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getText()
+    {
+        return $this->text;
     }
 
     /**

@@ -21,6 +21,17 @@ class EstimatedReadTimeTest extends TestCase
     }
 
     /** @test */
+    public function it_strips_tags()
+    {
+        $html = "<h1>That is an sample title</h1>";
+
+        $instance = (new EstimatedReadTime)
+            ->setText($html);
+
+        $this->assertEquals("That is an sample title", $instance->getText());
+    }
+
+    /** @test */
     public function it_can_handle_custom_words_per_minute()
     {
         $text = \Faker\Factory::create()->words(400, true);

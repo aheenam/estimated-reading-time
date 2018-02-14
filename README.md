@@ -29,6 +29,8 @@ $text = \Faker\Factory::create()->words(400, true);
     ->calculateTime();
 ```
 
+In most of the cases in the web, you do not have a plain text but a HTML fragment, but that does not matter. Internally the tags are stripped away when you use `setText()`
+
 ### Set default words per minute
 
 By default the assumption is made that one is able to read 200 words per minute, but you can easily change this config by setting the property `$wordsPerMinute`
