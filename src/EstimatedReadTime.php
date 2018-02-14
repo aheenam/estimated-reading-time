@@ -6,7 +6,6 @@ class EstimatedReadTime
 {
 
     /**
-     *
      * @var string
      */
     protected $text;
@@ -17,15 +16,20 @@ class EstimatedReadTime
     protected $wordsPerMinute;
 
     /**
+     * @var bool
+     */
+    protected $exactTime;
+
+    /**
      * constructor.
      */
     public function __construct()
     {
         $this->wordsPerMinute = 200;
+        $this->exactTime = false;
     }
 
     /**
-     *
      * @param string $text
      * @return EstimatedReadTime
      */
@@ -36,19 +40,6 @@ class EstimatedReadTime
     }
 
     /**
-     * calculates the reading time
-     *
-     * @return int
-     */
-    public function calculateTime()
-    {
-        $words = str_word_count($this->text);
-        return round($words / $this->wordsPerMinute);
-    }
-
-    /**
-     * Undocumented function
-     *
      * @param interger $wordsPerMinute
      * @return EstimatedReadTime
      */
@@ -56,5 +47,27 @@ class EstimatedReadTime
     {
         $this->wordsPerMinute = $wordsPerMinute;
         return $this;
+    }
+
+    /**
+     * @param boolean $exactTime
+     * @return void
+     */
+    public function exactTime(bool $exactTime)
+    {
+        $this->exactTime = $exactTime;
+        return $this;
+    }
+
+    /**
+     * calculates the reading time
+     *
+     * @return int
+     */
+    public function calculateTime()
+    {
+        $time = str_word_count($this->text) / $this->wordsPerMinute;
+
+        return ($this->exactTime) ? $time : round($time);
     }
 }

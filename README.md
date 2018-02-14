@@ -46,6 +46,27 @@ $text = \Faker\Factory::create()->words(400, true);
     ->calculateTime();
 ```
 
+### Get exact time
+
+Another default configuration is that this package returns a rounded number of minutes. You can though get a exact value as well.
+
+```php
+<?php
+
+$text = \Faker\Factory::create()->words(650, true);
+
+// returns 3.25
+(new EstimatedReadTime)
+    ->exactTime(true)
+    ->setText($text)
+    ->calculateTime();
+
+// returns 3
+(new EstimatedReadTime)
+    ->setText($text)
+    ->calculateTime();
+```
+
 Changelog
 ---
 Check [CHANGELOG](CHANGELOG.md) for the changelog

@@ -37,4 +37,22 @@ class EstimatedReadTimeTest extends TestCase
         $this->assertEquals(2, $minutesDefault);
         $this->assertEquals(1, $minutes);
     }
+
+    /** @test */
+    public function it_can_return_exact_time()
+    {
+        $text = \Faker\Factory::create()->words(650, true);
+        
+        $exactTime = (new EstimatedReadTime)
+            ->exactTime(true)
+            ->setText($text)
+            ->calculateTime();
+        
+        $roundedTime = (new EstimatedReadTime)
+            ->setText($text)
+            ->calculateTime();
+
+        $this->assertEquals(3, $roundedTime);
+        $this->assertEquals(3.25, $exactTime);
+    }
 }
