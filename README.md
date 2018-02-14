@@ -1,22 +1,14 @@
-estimated-read-time
+Estimated reading time
 ===
+
+Calculate the estimated reading time of any given webpage.
 
 Installation
 ---
 You can install the package via composer:
 
 ```bash
-composer require // add code here
-```
-
-If you are using Laravel in a version < 5.5, the service provider must be registered as a next step:
-
-```php
-// config/app.php
-'providers' => [
-    ...
-    // add code here
-];
+composer require aheenam/estimated-reading-time
 ```
 
 Usage
