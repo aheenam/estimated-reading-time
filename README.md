@@ -89,6 +89,8 @@ If you discover any security related issues, please email <your@mail.tld> or use
 
 About
 ---
+Aheenam is a small company from NRW, Germany creating custom digital solutions. Visit
+[our website](https://aheenam.com) to find out more about us.
 
 License
 ---
